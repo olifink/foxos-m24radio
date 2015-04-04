@@ -1,24 +1,24 @@
 window.addEventListener("load", function () {
     console.log("Hello World!");
 
-    /*
-     if (window.Notification && Notification.permission !== "granted") {
-     Notification.requestPermission(function (status) {
-     if (Notification.permission !== status) {
-     Notification.permission = status;
-     }
-     });
-     }
-     */
 
+    var player = document.getElementById('player');
+    var notification;
 
-    var button = document.getElementsName('button');
+    var stopPlayer = function () {
+        window.close();
+        notification.clear();
+    };
 
-    button.addEventListener('click', function () {
-        var player = document.getElementById('player');
-        if(player.)
-        var n = new Notification("Hello World");
-
+    player.addEventListener('play', function () {
+        if(!notification) {
+            notification = new Notification("Monocle Radio Live");
+            notification.addEventListener('click', function () {
+                stopPlayer();
+            });
+            notification.addEventListener('close', function () {
+                stopPlayer();
+            });
+        }
     });
-
 });

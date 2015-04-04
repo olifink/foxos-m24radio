@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
 
     <title>Hello World</title>
 
     <style>
-      body {
-        border: 1px solid black;
-      }
+        body {
+            background-color: black;
+            color: white;
+        }
+
+
     </style>
 
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
          so we use a script file. -->
     <script src="app.js" defer></script>
 
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- This code is in the public domain. Enjoy! -->
     <h1>Monocle Radio</h1>
+    <div id="logo">
+        <img src="images/monocle_logo.svg"/>
+        <p>LR</p>
+
+    </div>
     <audio id="player" mozaudiochannel="content" preload="none" src="http://radio.monocle.com/live" controls></audio>
-    <button id="button">Hello</button>
-  </body>
+</body>
 
 </html>
