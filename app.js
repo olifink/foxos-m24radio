@@ -3,22 +3,20 @@ window.addEventListener("load", function () {
 
 
     var player = document.getElementById('player');
-    var notification;
-
-    var stopPlayer = function () {
-        window.close();
-        notification.clear();
-    };
+    var n = null;
 
     player.addEventListener('play', function () {
-        if(!notification) {
-            notification = new Notification("Monocle Radio Live");
-            notification.addEventListener('click', function () {
-                stopPlayer();
+        if (!n) {
+            n = new Notification("Playing Monocle Radio");
+            n.addEventListener('click', function () {
+                n.close();
+                window.close();
             });
-            notification.addEventListener('close', function () {
-                stopPlayer();
+            n.addEventListener('close', function () {
+                n.close();
+                window.close();
             });
         }
     });
+
 });
