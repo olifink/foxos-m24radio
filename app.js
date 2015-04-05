@@ -5,7 +5,8 @@ window.addEventListener("load", function () {
     var player = document.getElementById('player');
     var n = null;
 
-    player.addEventListener('play', function () {
+    player.addEventListener('canplay', function () {
+        showError(false);
         if (!n) {
             // todo: find a nice origin for the webapp manifest
             var img = 'app://mywebapp.com/icons/icon60x60.png';
@@ -23,12 +24,7 @@ window.addEventListener("load", function () {
 
     player.addEventListener('error', function () {
         showError(true);
-        player.pause();
     });
-    player.addEventListener('canplay', function () {
-        showError(false);
-    });
-
 
     function showError(visible) {
         var error = document.getElementById('error');
