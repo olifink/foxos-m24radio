@@ -7,7 +7,9 @@ window.addEventListener("load", function () {
 
     player.addEventListener('play', function () {
         if (!n) {
-            n = new Notification("Playing Monocle Radio");
+            // todo: find a nice origin for the webapp manifest
+            var img = 'app://mywebapp.com/icons/icon60x60.png';
+            n = new Notification("Now playing monocle radio", {body: "Tap this to stop anytime.", icon:img});
             n.addEventListener('click', function () {
                 n.close();
                 window.close();
@@ -19,4 +21,22 @@ window.addEventListener("load", function () {
         }
     });
 
+    player.addEventListener('error', function () {
+        showError(true);
+        player.pause();
+    });
+    player.addEventListener('canplay', function () {
+        showError(false);
+    });
+
+
+    function showError(visible) {
+        var error = document.getElementById('error');
+        if (visible) {
+            error.setAttribute("style", "visibility:visible");
+        }
+        else {
+            error.setAttribute("style", "visibility:hidden");
+        }
+    }
 });

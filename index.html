@@ -19,6 +19,19 @@
             padding: 2em;
         }
 
+        #player {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error {
+            font-family: sans-serif;
+            font-size: smaller;
+            background-color: red;
+        }
+
+
     </style>
 
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
@@ -28,7 +41,8 @@
 </head>
 
 <body>
-    <!-- This code is in the public domain. Enjoy! -->
+    <div id="error" class="error" style="visibility: hidden">Sorry, can't find monocle radio right now.</div>
+
     <div id="logo">
         <img src="images/monocle_logo.svg"/>
         <br/>
