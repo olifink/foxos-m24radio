@@ -1,12 +1,13 @@
 {
   "name": "Monocle 24",
-  "description": "Monocle 24 Radio in style.",
+  "description": "Listening to Monocle 24 Radio in style.",
   "launch_path": "/index.html",
   "icons": {
     "128": "/icons/icon128x128.png"
   },
   "type": "privileged",
-  "origin": "app://mywebapp.com",
+  "origin": "app://zapthings.com",
+  "orientation": "portrait",
   "permissions": {
     "audio-channel-content": {
       "description": "Use the audio channel for the music player"

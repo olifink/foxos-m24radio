@@ -11,34 +11,47 @@
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
             background-color: black;
             color: white;
         }
 
-        img {
+        .center {
             padding: 2em;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /*.button {*/
-            /*display: block;*/
-            /*margin-left: auto;*/
-            /*margin-right: auto;*/
-        /*}*/
+        #controls {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25%;
+            width: 160px;
+        }
+
+        #logo {
+            margin-left: auto;
+            margin-right: auto;
+            width: 160px;
+            margin-top: 10%;
+        }
 
         .error {
             font-family: sans-serif;
             font-size: smaller;
             background-color: red;
-            float: none;
+            width: 100%;
         }
 
         .button {
             font-size: 60px;
-            /*display: inline-block;*/
             text-align: center;
+            width: 160px;
+            color: #fff;
+            border: none;
+            background: none;
         }
 
     </style>
@@ -51,24 +64,29 @@
 </head>
 
 <body>
-<div id="error" class="error" hidden >
+
+<audio id="player" mozaudiochannel="content" preload="none" src="http://radio.monocle.com/live"></audio>
+
+<div id="error" class="error" hidden>
     <span class="octicon octicon-alert"></span>
     Sorry, can't find monocle radio right now.
 </div>
 
-<div id="logo">
-    <img src="images/monocle_logo.svg" class="center">
-    <br/>
-    <img src="images/m24.svg" class="center">
+
+<img src="images/monocle_logo.svg" class="center">
+
+
+<div>
+    <div id="logo">
+        <img src="images/m24.svg">
+    </div>
+
+    <div id="controls">
+        <button id="buttonPlay" class="button mega-octicon octicon-playback-play"></button>
+        <button id="buttonPause" class="button mega-octicon octicon-playback-pause" hidden></button>
+        <button id="buttonRetry" class="button mega-octicon octicon-sync" hidden></button>
+    </div>
 </div>
-
-<!--<div id="buttons">-->
-    <span id="buttonPlay" class="button mega-octicon octicon-playback-play" hidden></span>
-    <span id="buttonPause" class="button mega-octicon octicon-playback-pause" hidden></span>
-    <span id="buttonRetry" class="button mega-octicon octicon-sync" ></span>
-<!--</div>-->
-
-<audio id="player" mozaudiochannel="content" preload="none" src="http://radio.monocle.com/live"></audio>
 </body>
 
 </html>

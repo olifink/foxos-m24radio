@@ -14,6 +14,7 @@ window.addEventListener("load", function () {
     });
 
     buttonRetry.addEventListener('click', function () {
+        player.load();
         player.play();
     });
 
@@ -26,10 +27,9 @@ window.addEventListener("load", function () {
     player.addEventListener('canplay', function () {
         showElementWithId('error', false);
         if (!notification) {
-            // todo: find a nice origin for the webapp manifest
-            var img = 'app://mywebapp.com/icons/icon60x60.png';
+            var img = 'app://zapthings.com/icons/icon128x128.png';
             notification = new Notification("Now playing monocle radio", {
-                body: "Tap this to stop anytime.",
+                body: "Tap this to stop listening.",
                 icon: img
             });
             notification.addEventListener('click', function () {
@@ -53,7 +53,7 @@ window.addEventListener("load", function () {
     });
 
     function showElementWithId(id, visible) {
-        console.log("show %s - %s", id, visible);
+        //console.log("show %s - %s", id, visible);
         var element = document.getElementById(id);
         if (visible) {
             element.removeAttribute('hidden');
