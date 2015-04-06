@@ -1,6 +1,10 @@
 {
   "name": "Monocle 24",
   "description": "Listening to Monocle 24 Radio in style.",
+  "developer": {
+    "name": "Oliver Fink",
+    "url": "http://github.com/olifink"
+  },
   "launch_path": "/index.html",
   "icons": {
     "128": "/icons/icon128x128.png"
