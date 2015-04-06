@@ -1,38 +1,73 @@
 window.addEventListener("load", function () {
     console.log("Hello World!");
 
+    //selectButton('buttonPlay');
 
     var player = document.getElementById('player');
-    var n = null;
+    var buttonPlay = document.getElementById('buttonPlay');
+    var buttonPause = document.getElementById('buttonPause');
+    var buttonRetry = document.getElementById('buttonRetry');
+    var notification = null;
+
+    buttonPlay.addEventListener('click', function () {
+        player.play();
+    });
+
+    buttonRetry.addEventListener('click', function () {
+        player.play();
+    });
+
+    buttonPause.addEventListener('click', function () {
+        player.pause();
+        selectButton('buttonPlay');
+    });
+
 
     player.addEventListener('canplay', function () {
-        showError(false);
-        if (!n) {
+        showElementWithId('error', false);
+        if (!notification) {
             // todo: find a nice origin for the webapp manifest
             var img = 'app://mywebapp.com/icons/icon60x60.png';
-            n = new Notification("Now playing monocle radio", {body: "Tap this to stop anytime.", icon:img});
-            n.addEventListener('click', function () {
-                n.close();
+            notification = new Notification("Now playing monocle radio", {
+                body: "Tap this to stop anytime.",
+                icon: img
+            });
+            notification.addEventListener('click', function () {
+                notification.close();
                 window.close();
             });
-            n.addEventListener('close', function () {
-                n.close();
+            notification.addEventListener('close', function () {
+                notification.close();
                 window.close();
             });
         }
+    });
+
+    player.addEventListener('play', function () {
+        selectButton('buttonPause');
     });
 
     player.addEventListener('error', function () {
-        showError(true);
+        showElementWithId('error', true);
+        selectButton('buttonRetry');
     });
 
-    function showError(visible) {
-        var error = document.getElementById('error');
+    function showElementWithId(id, visible) {
+        console.log("show %s - %s", id, visible);
+        var element = document.getElementById(id);
         if (visible) {
-            error.setAttribute("style", "visibility:visible");
+            element.removeAttribute('hidden');
         }
         else {
-            error.setAttribute("style", "visibility:hidden");
+            element.setAttribute('hidden', 'hidden');
         }
+    }
+
+    function selectButton(id) {
+        const names = ['buttonPlay', 'buttonPause', 'buttonRetry'];
+        for (var i in  names) {
+            showElementWithId(names[i], names[i] === id);
+        }
+
     }
 });
