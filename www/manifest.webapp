@@ -3,7 +3,7 @@
   "description": "Listening to Monocle 24 Radio in style.",
   "developer": {
     "name": "Oliver Fink",
-    "url": "http://github.com/olifink"
+    "url": "https://github.com/olifink/foxos-m24radio"
   },
   "launch_path": "/index.html",
   "icons": {
