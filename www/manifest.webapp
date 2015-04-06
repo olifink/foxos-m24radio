@@ -1,0 +1,18 @@
+{
+  "name": "Monocle 24",
+  "description": "Monocle 24 Radio in style.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/icons/icon128x128.png"
+  },
+  "type": "privileged",
+  "origin": "app://mywebapp.com",
+  "permissions": {
+    "audio-channel-content": {
+      "description": "Use the audio channel for the music player"
+    },
+    "desktop-notification": {
+      "description": "Needed for creating system notifications."
+    }
+  }
+}
