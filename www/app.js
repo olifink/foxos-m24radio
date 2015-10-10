@@ -1,8 +1,6 @@
 window.addEventListener("load", function () {
     console.log("Hello World!");
 
-    //selectButton('buttonPlay');
-
     var player = document.getElementById('player');
     var buttonPlay = document.getElementById('buttonPlay');
     var buttonPause = document.getElementById('buttonPause');
@@ -65,7 +63,7 @@ window.addEventListener("load", function () {
 
     function selectButton(id) {
         const names = ['buttonPlay', 'buttonPause', 'buttonRetry'];
-        for (var i in  names) {
+        for (var i in names) {
             showElementWithId(names[i], names[i] === id);
         }
 
