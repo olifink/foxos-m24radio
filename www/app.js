@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-    console.log("Hello World!");
+    console.log("Hello Worldy!");
 
     var player = document.getElementById('player');
     var buttonPlay = document.getElementById('buttonPlay');
