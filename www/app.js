@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
     var buttonRetry = document.getElementById('buttonRetry');
     var notification = null;
 
+    //demo?
     buttonPlay.addEventListener('click', function () {
         player.play();
     });
